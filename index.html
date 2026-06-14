@@ -8,7 +8,7 @@
 <h1>Suno Factory</h1>
 
 <label>Genre</label>
-<select>
+<select id="genre">
     <option>House</option>
     <option>Alternative Rock</option>
     <option>Trap</option>
@@ -17,7 +17,7 @@
 <br><br>
 
 <label>Mood</label>
-<select>
+<select id="mood">
     <option>Happy</option>
     <option>Sad</option>
     <option>Dark</option>
@@ -26,44 +26,48 @@
 <br><br>
 
 <label>Theme</label>
-<input type="text" placeholder="Toxic Love">
+<input id="theme" type="text" placeholder="Toxic Love">
 
 <br><br>
-
-<button>Generate Song</button>
-
-<hr>
-
-<h2>Style Output</h2>
-<textarea rows="10" cols="80"></textarea>
-
-<h2>Lyrics Output</h2>
-<textarea rows="20" cols="80"></textarea>
-
-<h2>Settings</h2>
-<textarea rows="5" cols="80"></textarea>
-
-</body>
-</html>
-
-
-<select id="genre">
-    <option>House</option>
-    <option>Alternative Rock</option>
-</select>
-
-<select id="mood">
-    <option>Sad</option>
-    <option>Happy</option>
-</select>
-
-<input id="theme" type="text">
 
 <button id="generateBtn">
     Generate Song
 </button>
 
-<textarea id="styleOutput"></textarea>
-<textarea id="lyricsOutput"></textarea>
+<hr>
+
+<h2>Style Output</h2>
+<textarea id="styleOutput" rows="10" cols="80"></textarea>
+
+<h2>Lyrics Output</h2>
+<textarea id="lyricsOutput" rows="20" cols="80"></textarea>
+
+<h2>Settings</h2>
+<textarea id="settingsOutput" rows="5" cols="80"></textarea>
 
 <script src="script.js"></script>
+
+</body>
+</html>
+
+Then replace script.js with:
+
+document
+  .getElementById("generateBtn")
+  .addEventListener("click", () => {
+
+    const genre =
+      document.getElementById("genre").value;
+
+    const mood =
+      document.getElementById("mood").value;
+
+    const theme =
+      document.getElementById("theme").value;
+
+    document.getElementById("styleOutput").value =
+      `Genre: ${genre}
+Mood: ${mood}
+Theme: ${theme}`;
+
+});
