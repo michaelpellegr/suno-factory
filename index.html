@@ -30,9 +30,7 @@
 
 <br><br>
 
-<button id="generateBtn">
-    Generate Song
-</button>
+<button id="generateBtn">Generate Song</button>
 
 <hr>
 
@@ -49,25 +47,3 @@
 
 </body>
 </html>
-
-Then replace script.js with:
-
-document
-  .getElementById("generateBtn")
-  .addEventListener("click", () => {
-
-    const genre =
-      document.getElementById("genre").value;
-
-    const mood =
-      document.getElementById("mood").value;
-
-    const theme =
-      document.getElementById("theme").value;
-
-    document.getElementById("styleOutput").value =
-      `Genre: ${genre}
-Mood: ${mood}
-Theme: ${theme}`;
-
-});
