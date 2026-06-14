@@ -1,6 +1,3 @@
-const API_KEY = "deepseek/deepseek-chat";
-
-
 document
   .getElementById("generateBtn")
   .addEventListener("click", () => {
@@ -14,6 +11,8 @@ document
     const theme =
       document.getElementById("theme").value;
 
-    console.log(genre, mood, theme);
+    alert(
+      `Genre: ${genre}\nMood: ${mood}\nTheme: ${theme}`
+    );
 
 });
