@@ -11,13 +11,36 @@ document
     const theme =
       document.getElementById("theme").value;
 
-    document.getElementById("styleOutput").value =
-      `STYLE PROMPT:\nGenre: ${genre}\nMood: ${mood}\nTheme: ${theme}`;
+    // SUNO STYLE GENERATOR (rule-based v1)
+    const stylePrompt =
+      `${genre} music, ${mood.toLowerCase()} tone, ${theme} theme, ` +
+      `120-130 BPM, modern polished production, addictive hook, ` +
+      `tight drum groove, emotional vocal delivery, ` +
+      `viral TikTok structure, earworm melody, minimal but powerful instrumentation, ` +
+      `drop focused arrangement, high replay value.`;
 
-    document.getElementById("lyricsOutput").value =
-      `[intro]\n${theme} begins to echo...\n\n[chorus]\nLost inside ${theme}`;
+    // SUNO LYRIC ENGINE (simple but structured)
+    const lyrics =
+`[intro]
+${theme} in my head again...
 
-    document.getElementById("settingsOutput").value =
-      `Weirdness: 40%\nStyle Influence: 70%`;
+[verse 1]
+I feel the weight of ${theme}
 
-});
+[pre-chorus]
+It pulls me under
+
+[chorus]
+I'm lost inside ${theme}, I can't escape it`;
+
+    const settings =
+`Weirdness: 35%
+Style Influence: 80%
+BPM: 124
+Key: Auto`;
+
+    document.getElementById("styleOutput").value = stylePrompt;
+    document.getElementById("lyricsOutput").value = lyrics;
+    document.getElementById("settingsOutput").value = settings;
+
+  });
