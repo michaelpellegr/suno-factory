@@ -11,8 +11,13 @@ document
     const theme =
       document.getElementById("theme").value;
 
-    alert(
-      `Genre: ${genre}\nMood: ${mood}\nTheme: ${theme}`
-    );
+    document.getElementById("styleOutput").value =
+      `STYLE PROMPT:\nGenre: ${genre}\nMood: ${mood}\nTheme: ${theme}`;
+
+    document.getElementById("lyricsOutput").value =
+      `[intro]\n${theme} begins to echo...\n\n[chorus]\nLost inside ${theme}`;
+
+    document.getElementById("settingsOutput").value =
+      `Weirdness: 40%\nStyle Influence: 70%`;
 
 });
